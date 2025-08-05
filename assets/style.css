@@ -1,0 +1,217 @@
+/* === GLOBAL STYLE === */
+body:not(.login-page) {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+h2, h3 {
+  color: #333;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"],
+button {
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  max-width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 90%;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.menu-preview {
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* === HAMBURGER MENU === */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  background: #ffffffcc;
+  border-radius: 6px;
+  padding: 8px 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.hamburger:hover {
+  background: #ffffff;
+}
+
+.hamburger.hidden {
+  display: none;
+}
+
+.menu-panel {
+  position: fixed;
+  top: 0;
+  left: -240px;
+  width: 220px;
+  height: 100%;
+  background: #2c3e50;
+  color: #fff;
+  padding: 20px;
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+  z-index: 4;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.menu-panel.active {
+  left: 0;
+}
+
+.menu-panel a,
+.menu-panel button,
+.menu-panel label,
+.menu-panel input[type="file"] {
+  display: block;
+  margin: 18px 0;
+  color: #ecf0f1;
+  background: none;
+  border: none;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.menu-panel a:hover,
+.menu-panel button:hover {
+  color: #1abc9c;
+}
+
+.menu-panel input[type="file"] {
+  padding: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ecf0f1;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #e74c3c;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.content {
+  padding-top: 60px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVE MOBILE === */
+@media (max-width: 480px) {
+  body:not(.login-page) {
+    padding: 10px;
+  }
+
+  .content {
+    padding: 20px 10px;
+  }
+
+  .menu-panel {
+    width: 85%;
+    max-width: 240px;
+    padding: 15px;
+  }
+
+  .menu-panel a,
+  .menu-panel button,
+  .menu-panel label {
+    font-size: 15px;
+    margin: 12px 0;
+  }
+
+  .hamburger {
+    font-size: 26px;
+    padding: 6px 12px;
+  }
+
+  .close-btn {
+    font-size: 22px;
+  }
+}
+/* === NOTIFIKASI === */
+.notif-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 12px 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease;
+}
